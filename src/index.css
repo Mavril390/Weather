@@ -11,7 +11,16 @@
   height: 100vh;
 }
 
-.weather, 
+.weather{
+  opacity: .9;
+  color: black;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  min-width: 170px;
+  box-shadow: 0 1px 10px rgb(0 0 0 / 20%);
+} 
+
 #weatherP0, 
 #weatherP1, 
 #weatherP2, 
