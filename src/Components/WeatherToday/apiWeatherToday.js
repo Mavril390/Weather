@@ -29,6 +29,16 @@ const getDate = () => {
   return `${date.toDateString()}`;
 }
 
+function onError() {
+  alert("ocurrio un error o no hay permisos para ver la ubicación");
+}
+
+var config = {
+  enableHighAccuracy: true, 
+  maximumAge        : 30000, 
+  timeout           : 27000
+};
+
 export const onLoad = () => {
-  navigator.geolocation.getCurrentPosition(fetchData);
+  navigator.geolocation.getCurrentPosition(fetchData, onError, config);
 }

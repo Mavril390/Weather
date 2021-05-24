@@ -31,7 +31,7 @@ const setWeatherDataPrevius = data =>{
             [dateP]: datePre(),
             [descriptionP]: data.daily[i].weather[0].main,
             [tempMin]: "Min: " + data.daily[i].temp.min + " C°",
-            [tempMax]: "Max: " + data.daily[i].temp.max + " C°",
+            [tempMax]: "Max: " + data.daily[i].temp.max + " C",
         }
 
         document.getElementById(`weatherP${[i]}`).innerHTML = 
@@ -55,6 +55,17 @@ const setWeatherDataPrevius = data =>{
     }
 }
 
+function onError() {
+  alert("ocurrio un error o no hay permisos para ver la ubicación");
+}
+  
+var config = {
+  enableHighAccuracy: true, 
+  maximumAge        : 30000, 
+  timeout           : 27000
+};
+  
+
 export const onLoad = () => {
-    navigator.geolocation.getCurrentPosition(fetchData);
+    navigator.geolocation.getCurrentPosition(fetchData, onError, config);
 }
