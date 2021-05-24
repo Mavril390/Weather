@@ -1,13 +1,78 @@
-body {
+* {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.weather, 
+#weatherP0, 
+#weatherP1, 
+#weatherP2, 
+#weatherP3, 
+#weatherP4, 
+#weatherP5, 
+#weatherP6, 
+#weatherP7{
+  opacity: .9;
+  color: black;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  min-width: 170px;
+  box-shadow: 0 1px 10px rgb(0 0 0 / 20%);
+  margin: 10px;
+}
+
+#location{
+  font-size: 30px;
+  text-align: center;
+}
+
+#date{
+  padding-bottom: 15px;
+  color: #eb6e4b;
+  border-bottom: 2px solid white;
+  text-align: center;
+}
+
+.weather__IconDes{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+#description, #icon {
+  display: contents;
+  text-align: center;
+}
+
+#temperature{
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+}
+
+#dateP, #weather__IconDes, #tempMin, #tempMax{
+  display: flex;
+  justify-content: center;
+}
+
+.datep{
+  text-align: center;
+  font-size: 16px;
+  color: #eb6e4b;
+}
+
+.temp{
+  text-align: center;
+  font-size: 18px;
 }
