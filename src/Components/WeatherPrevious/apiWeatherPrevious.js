@@ -10,6 +10,7 @@ const fetchData = position => {
 }
 
 const setWeatherDataPrevius = data =>{
+    let f = 0
     for(let i = 0; i < 8; i++){
 
         var dateP = `dateP${[i]}`
@@ -20,10 +21,11 @@ const setWeatherDataPrevius = data =>{
         const datePre = () => {
             let d = new Date();
             if(validateDate((d.getDate() + i), d.getMonth(), 2021)){
-                return `${(d.getDate() + i + 1)+ "-" +d.getMonth()}`;
+                return `${(d.getDate() + i +1) + "-" +d.getMonth()}`;
             }
             else{
-                return ([i] - 6) + "-" + (d.getMonth() + 1)
+                f++
+                return `${f}` + "-" + (d.getMonth() +1)
             }
         }
         
@@ -31,7 +33,7 @@ const setWeatherDataPrevius = data =>{
             [dateP]: datePre(),
             [descriptionP]: data.daily[i].weather[0].main,
             [tempMin]: "Min: " + data.daily[i].temp.min + " C°",
-            [tempMax]: "Max: " + data.daily[i].temp.max + " C",
+            [tempMax]: "Max: " + data.daily[i].temp.max + " C°",
         }
 
         document.getElementById(`weatherP${[i]}`).innerHTML = 
